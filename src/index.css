@@ -1,13 +1,179 @@
-body {
+:root{
+  --primary: #e33371;
+   --secondary: #424242;
+}
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+ overflow-x: hidden;
+ font-family: 'Roboto', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App{
+  max-width: 1000px;
+  margin: 0 auto;
+ 
+ 
+}
+.title h1{
+  margin: 0;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  font-weight: normal;
+  padding: 10px 5px;
+  color: var(--secondary);
+}
+.title p{
+  text-align: center;
+  font-size: 1.3em;
+  color: var(--secondary);
+}
+.title h2{
+  margin-top: 60px;
+  font-size: 2.3em;
+  text-align: center;
+  
+}
+
+/* upload form styles */
+
+form{
+  margin: -20px auto 10px;
+  text-align: center;
+}
+label input{
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+label{
+  display: inline-block;
+  margin: 0px auto;
+  text-align: center;
+}
+.upload{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--primary);
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 12px rgba(0,0,0,.3);
+}
+.upload:active{
+  transform: scale(0.95);
+}
+.output{
+margin: 20px auto;
+  font-size: 1.2em;
+  padding: 0px 10px;
+}
+.error{
+  color: orangered;
+}
+
+/* Progress Bar */
+.container{
+  background: lightgray;
+  height: 8px;
+  border-radius: 60px;
+}
+.progress-bar{
+  height: 8px;
+  background: var(--primary);
+  margin-top: 20px;
+  border-radius: 60px;
+} 
+
+/* image grid styles */
+.img-grid{
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+.img-wrap{
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  /* padding controls height, will always be perfectly square regardless of width */
+  position: relative;
+  opacity: 0.8;
+
+}
+.img-wrap img{
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+ opacity: 0.8;
+}
+
+/* Modal styles */
+.modal{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: rgba(0,0,0,.3);
+  top: 0;
+  left: 0;
+}
+
+.modal img{
+  display: block;
+  max-width: 60%;
+  max-height: 80%;
+  margin: 60px auto;
+  box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
+  border: 3px solid var(--primary);
+  border-radius: 10px;
+}
+
+
+
+@media (max-width: 900px){
+  .img-grid{
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+   padding: 10px 20px;
+  }
+
+  h1{
+  text-align: center;
+  }
+}
+
+
+@media (max-width: 600px){
+  .img-grid{
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    padding: 10px 50px;
+  }
+  h1{
+    text-align: center;
+  }
+  .title h2{
+    margin-top: 60px;
+    font-size: 2em;
+    text-align: center;
+    
+  }
+ .upload{
+  font-size: 26px;
+ }
 }
